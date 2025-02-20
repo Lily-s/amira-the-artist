@@ -1,3 +1,12 @@
+.logo img.profile-pic {
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Must match width for a perfect circle */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image fills the circle */
+  border: 2px solid #e83e8c; /* Optional: Add a border */
+  transition: transform 0.3s ease; /* Optional: Add hover effect */
+}
+
 .language-switcher {
   .language-switcher {
     position: relative;
