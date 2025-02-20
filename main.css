@@ -1,7 +1,93 @@
 .language-switcher {
-  position: absolute;
-  right: 20px;
-  top: 20px;
+  .language-switcher {
+    position: relative;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  .lang-select {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #e83e8c;
+    background: white;
+    color: #333;
+    font-size: 14px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e83e8c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+    padding-right: 32px;
+  }
+
+  .lang-select:hover {
+    border-color: #d3367d;
+    box-shadow: 0 0 0 3px rgba(232, 62, 140, 0.1);
+  }
+
+  .lang-select:focus {
+    outline: none;
+    border-color: #e83e8c;
+    box-shadow: 0 0 0 3px rgba(232, 62, 140, 0.2);
+  }
+
+  /* Update navigation styles */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+  }
+
+  .nav-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e83e8c;
+    margin-right: 40px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    margin-right: auto;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      padding: 20px;
+    }
+
+    .logo {
+      margin-right: 20px;
+    }
+
+    .lang-select {
+      padding: 6px 10px;
+      font-size: 12px;
+      padding-right: 28px;
+      background-size: 14px;
+    }
+
+    .nav-links {
+      display: none;
+    }
+  }
 }
 
 .lang-select {
