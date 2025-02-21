@@ -154,7 +154,6 @@ nav {
   color: #d09eb5;
 }
 
-/* Hero Section */
 .hero {
   height: 100vh;
   display: flex;
@@ -165,6 +164,10 @@ nav {
     url("assets/301208573_5426217840747282_3926186755374190674_n.jpg");
   background-size: cover;
   padding: 0 20px;
+}
+
+.glide__slide img {
+  height: 600px;
 }
 
 .cta-button:hover {
