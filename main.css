@@ -125,6 +125,9 @@ nav {
 
 .glide__slide img {
   height: 400px;
+  border-radius: 12px;
+
+  overflow: hidden;
 }
 
 .cta-button:hover {
@@ -275,6 +278,8 @@ body {
   padding-bottom: 10px;
   border-bottom: 3px solid #e74c3c;
   display: inline-block;
+  justify-content: center;
+  text-align: center;
 }
 .about-text p {
   font-size: 1.1rem;
