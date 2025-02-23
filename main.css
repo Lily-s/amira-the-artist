@@ -222,3 +222,8 @@ footer {
     display: none;
   }
 }
+
+.image-about {
+  max-height: 400px;
+  width: 50%;
+}
