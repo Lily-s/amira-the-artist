@@ -225,32 +225,42 @@ footer {
 
 .image-about {
   width: 100%;
-  max-width: 400px;
-  height: auto;
+  height: 100%;
+  max-height: 600px;
+  object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.image-wrapper {
+  flex: 1 1 400px;
+  min-width: 300px;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
 }
 
-.about-content {
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: stretch;
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-  align-items: center;
-  justify-content: center;
 }
 
 .about-text {
-  flex: 1;
+  flex: 1 1 500px;
   min-width: 300px;
   max-width: 600px;
-  padding: 30px;
+  padding: 40px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .about-text h2 {
   font-size: 2.4rem;
@@ -269,34 +279,21 @@ footer {
 }
 @media (max-width: 768px) {
   .about-section {
-    padding: 30px 15px;
-    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-wrapper,
+  .about-text {
+    max-width: 100%;
+    flex-basis: auto;
   }
 
   .image-about {
-    max-width: 280px;
+    max-height: 400px;
   }
 
   .about-text {
-    padding: 25px;
+    padding: 30px;
   }
-
-  .about-text h2 {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-text {
-    padding: 20px;
-    min-width: auto;
-  }
-
-  .about-text p {
-    font-size: 1rem;
-  }
-}
-
-.image-about:hover {
-  transform: translateY(-5px);
 }
