@@ -32,7 +32,126 @@
         <a href="#contact">Contact</a>
       </div>
     </nav>
+    <section class="simple-gallery">
+      <h2>Available Paintings</h2>
 
+      <div class="gallery-grid">
+        <div class="painting-card" data-id="1">
+          <img src="assets/gallery/10.jpeg" alt="Whispers of the Forest" />
+          <div class="painting-info">
+            <h3>Stories in the Courtyard</h3>
+            <p>60×90 cm • $1200</p>
+          </div>
+          <div class="select-overlay">✓</div>
+        </div>
+
+        <div class="painting-card" data-id="2">
+          <img src="assets/gallery/11.jpeg" alt="Village Rhythms" />
+          <div class="painting-info">
+            <h3>Village Rhythms</h3>
+            <p>50×70 cm • $950</p>
+          </div>
+          <div class="select-overlay">✓</div>
+        </div>
+        <div class="painting-card" data-id="2">
+          <img src="assets/gallery/9.jpeg" alt="Dancing Flames" />
+          <div class="painting-info">
+            <h3>Dawn's Embrace</h3>
+            <p>50×70 cm • $950</p>
+          </div>
+          <div class="select-overlay">✓</div>
+        </div>
+        <div class="painting-card" data-id="2">
+          <img src="assets/gallery/8.jpeg" alt="Dancing Flames" />
+          <div class="painting-info">
+            <h3>The Lotus of Hope</h3>
+            <p>50×70 cm • $950</p>
+          </div>
+          <div class="select-overlay">✓</div>
+        </div>
+        <div class="painting-card" data-id="2">
+          <img
+            src="assets/gallery/Gemini_Generated_7.jpeg"
+            alt="Dancing Flames"
+          />
+          <div class="painting-info">
+            <h3>Ganga Flowers</h3>
+            <p>50×70 cm • $950</p>
+          </div>
+          <div class="select-overlay">✓</div>
+        </div>
+        <div class="painting-card" data-id="2">
+          <img
+            src="assets/gallery/Gemini_Generated_Image_hy5esehy5esehy5e.jpeg"
+            alt="Dancing Flames"
+          />
+          <div class="painting-info">
+            <h3>Market Day</h3>
+            <p>50×70 cm • $950</p>
+          </div>
+          <div class="select-overlay">✓</div>
+        </div>
+        <div class="painting-card" data-id="1">
+          <img src="assets/gallery/12.jpeg" alt="Whispers of the Forest" />
+          <div class="painting-info">
+            <h3>A sacred bond</h3>
+            <p>60×90 cm • $1200</p>
+          </div>
+          <div class="select-overlay">✓</div>
+        </div>
+        <div class="painting-card" data-id="1">
+          <img src="assets/gallery/Gemini_Generated_Image_36w1r536w1r536w1.jpeg" alt="Whispers of the Forest" />
+          <div class="painting-info">
+            <h3>Whispers of the Fores</h3>
+            <p>60×90 cm • $1200</p>
+          </div>
+          <div class="select-overlay">✓</div>
+      </div>
+
+      <form id="inquiry-form" class="hidden">
+        <h3>Selected Paintings (<span id="selected-count">0</span>)</h3>
+        <input type="hidden" name="selected_ids" id="selected-ids" />
+
+        <div class="form-group">
+          <label>Your Name:</label>
+          <input type="text" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label>Your Email:</label>
+          <input type="email" name="email" required />
+        </div>
+
+        <button type="submit">Request Details</button>
+      </form>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".painting-card");
+        const form = document.getElementById("inquiry-form");
+        const selectedIds = document.getElementById("selected-ids");
+        const selectedCount = document.getElementById("selected-count");
+
+        cards.forEach((card) => {
+          card.addEventListener("click", function () {
+            this.classList.toggle("selected");
+            updateSelected();
+          });
+        });
+
+        function updateSelected() {
+          const selected = Array.from(
+            document.querySelectorAll(".selected")
+          ).map((card) => card.dataset.id);
+
+          selectedIds.value = selected.join(",");
+          selectedCount.textContent = selected.length;
+
+          form.classList.toggle("hidden", selected.length === 0);
+        }
+      });
+    </script>
     <section class="features" id="pictures">
       <div class="features-grid">
         <div class="feature-card">
